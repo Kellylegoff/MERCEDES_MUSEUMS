@@ -1,2 +1,22 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-6" data-controller="mapbox">
+          <form class="d-flex my-5" data-action="submit->mapbox#geocode">
+            <input type="text" class="form-control flex-grow-1 me-2" placeholder="Type longitude" data-mapbox-target="input_latitude">
+            <input type="text" class="form-control flex-grow-1 me-2" placeholder="Type latitude" data-mapbox-target="input_longitude">
+            <input type="submit" value="Geocode!" class="btn btn-primary">
+          </form>
+          <%# <p class="font-monospace lead text-center fw-bold" data-mapbox-target="museumTag">
+            <!-- Display the coordinates here -->
+          </p> %>
+          <div id="map" style="height: 300px; width: 600px">
+            <!-- Display the map in this div -->
+          </div>
+
+          <div>
+          <%= link_to 'voir les musées', museums_path %>
+          </div>
+        </div>
+      </div>
+    </div>
